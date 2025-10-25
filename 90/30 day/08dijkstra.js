@@ -48,10 +48,7 @@ function dijkstra(graph, start, end) {
   while (!pq.isEmpty()) {
     const currentKota = pq.dequeue();
 
-    if (currentKota === end) {
-    //   console.log(`\nNode tujuan ${end} tercapai. Algoritma selesai.`);
-      break;
-    }
+    if (currentKota === end) break;
 
     if (visited.has(currentKota)) continue;
     visited.add(currentKota);
