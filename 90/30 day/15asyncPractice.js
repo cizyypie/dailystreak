@@ -6,25 +6,15 @@ const users = [
 
 // Implementasi Callback
 function getUserDataCallback(userId, callback) {
-  fetch(users.id)
+  const userId = users.id
+  fetch(userId)
   .then(response => {
     if(!response.ok){
         throw new Error ("ERROR ! fail to get data")
     }
-    return response.json
-  }).then(response => {
-    if (!response.ok) {
-        throw new Error('network response was no ok');
-    }
-    return
-     response.json();
-  })
-  .then(users => {
-    const dataUser = {
-        id: users.id,
-        username: users.username
-    }; 
-    callback(dataUser);
+    return response.json()
+  }).then(users => {
+    callback(users);
   })
   .catch(error =>{
     callbackError(error)
