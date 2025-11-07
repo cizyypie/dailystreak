@@ -13,7 +13,8 @@ function getUserDataCallback(userId, callback) {
 
 // Implementasi Promise
 function getUserDataPromise(userId) {
-  //code
+  const user= users.find(usr =>usr.id === userId)
+  
 }
 
 // Implementasi Async/Await
@@ -27,15 +28,15 @@ getUserDataCallback(1, (user) => {
   // Output: Callback Result: { id: 1, username: 'john_doe' }
 });
 
-// // Test Case Promise
-// getUserDataPromise(2)
-//   .then((user) => {
-//     console.log('Promise Result:', user);
-//     // Output: Promise Result: { id: 2, username: 'jane_smith' }
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
+// Test Case Promise
+getUserDataPromise(2)
+  .then((user) => {
+    console.log('Promise Result:', user);
+    // Output: Promise Result: { id: 2, username: 'jane_smith' }
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
 // // Test Case Async/Await
 // (async () => {
