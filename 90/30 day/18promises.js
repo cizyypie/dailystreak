@@ -6,7 +6,11 @@ const users = [
 
 function getUserDataPromise(userId) {
   const user= users.find(usr =>usr.id === userId)
-  
+      if (user) {
+      resolve(user);   
+    } else {
+      reject("Not found"); 
+    }
   
 }
 
